@@ -28,7 +28,7 @@ Also included:
 
 ---
 
-## 🧪 How to Compile and Run
+## How to Compile and Run
 
 Each file is **independent**. To compile and run any of them, use the terminal commands below. Just replace the filename with the one you want.
 
@@ -54,7 +54,7 @@ g++ -lpng yourfile.cpp -o yourprogram
 ./yourprogram
 ```
 
-### 💻 On Windows:
+### On Windows:
 
 You’ll need to install a C++ compiler that supports PNG, such as **MinGW** or **Visual Studio**.  
 A video tutorial will be added soon to help with setup on Windows.
@@ -73,7 +73,7 @@ All implementations mirror the same math we did manually in class — now automa
 
 ---
 
-## 🧠 Tips
+## Tips
 
 - The grayscale version is great for comparing visual effects after applying operations.
 - The code is commented to help you understand what's going on step-by-step.
@@ -81,10 +81,6 @@ All implementations mirror the same math we did manually in class — now automa
 
 ---
 
-## ✌️ Good luck with your exams!
+## Good luck with your exams!
 
-Hope this helps, and feel free to clone or fork and experiment as much as you want!
-
-```
-
-```
+I hope this helps, and feel free to clone or fork and experiment as much as you want!
