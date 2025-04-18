@@ -1,0 +1,44 @@
+// This program performs contrast stretching to expand the dynamic range of the image.
+// We apply the formula from the lecture:
+//
+//     O(x, y) = (I(x, y) - min) * (2^B - 1) / (max - min)
+//
+// This maps the darkest pixel to 0 and the brightest pixel to 255.
+// It's helpful for increasing contrast when the image looks dull or flat.
+//
+// The code does two passes over the image:
+// 1. Find the minimum and maximum pixel values.
+// 2. Apply the contrast stretching formula to each pixel.
+//
+
+#include "image.h"
+#include <algorithm> // for std::min, std::max
+
+int main()
+{
+    GrayscaleImage im;
+    im.Load("lena.png");
+
+    int min_val = 255;
+    int max_val = 0;
+
+    // First pass: find min and max pixel values
+    for (int y = 0; y < im.GetHeight(); y++) {
+        for (int x = 0; x < im.GetWidth(); x++) {
+            int px = im(x, y);
+            if (px < min_val) min_val = px;
+            if (px > max_val) max_val = px;
+        }
+    }
+
+    // Second pass: stretch contrast
+    for (int y = 0; y < im.GetHeight(); y++) {
+        for (int x = 0; x < im.GetWidth(); x++) {
+            im(x, y) = (im(x, y) - min_val) * 255 / (max_val - min_val);
+        }
+    }
+
+    im.Save("output_contrast_stretching.png");
+
+    return 0;
+}
